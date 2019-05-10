@@ -15,7 +15,7 @@
 </div>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Home</a>
+  <a class="navbar-brand" routerLink="/user-dashboard">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,13 +23,13 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">User</a>
+        <a class="nav-link" routerLink="/user-dashboard" routerLinkActive="active">User</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">HR</a>
+        <a class="nav-link" routerLink="/hr-dashboard" routerLinkActive="active">HR</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Reviewer</a>
+        <a class="nav-link" routerLink="/reviewer-dashboard" routerLinkActive="active">Reviewer</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown">Edit</a>
@@ -71,6 +71,7 @@
                       <th>Firstname</th>
                       <th>Lastname</th>
                       <th>Email</th>
+                      <th>Status</th>
                     </tr>
                   </thead>
                   <tbody>
