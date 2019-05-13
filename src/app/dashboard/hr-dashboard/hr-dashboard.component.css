@@ -36,4 +36,7 @@
   .wrapper-table {
     margin-top: 20px;
   }
- 
+  .img-responsive-action {
+    max-width: 40px;
+    max-height: 40px;
+  }

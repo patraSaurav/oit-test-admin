@@ -1,107 +1,206 @@
 
 <div class="d-flex justify-content-between collapse navbar-collapse">
-  <div>
-      <img src="assets/logo.png" alt="OIT logo" class="img-fluid logo-image" width="80px" height="80px">
-  </div>
-  <div>
-      <a class="nav-link dropdown-toggle" data-toggle="dropdown">
-        <img src="assets/user-icon-logo.png" alt="user icon logo" class="img-fluid">
-      </a>
+    <div>
+        <img src="assets/logo.png" alt="OIT logo" class="img-fluid logo-image" width="80px" height="80px">
+    </div>
+    <div>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="assets/user-icon-logo.png" alt="user icon logo" class="img-fluid">
+        </a>
 
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Log Out</a>
-      </div>
-  </div>
-</div>
-
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="/user-dashboard">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/user-dashboard" routerLinkActive="active">User</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/hr-dashboard" routerLinkActive="active">HR</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/reviewer-dashboard" routerLinkActive="active">Reviewer</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Edit</a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Questions</a>
-          <a class="dropdown-item" href="#">Review</a>
-          <a class="dropdown-item" href="#">Report</a>
+          <a class="dropdown-item" href="#">Log Out</a>
         </div>
-      </li>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" routerLink="/admin-dashboard">Home</a> -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-dashboard" routerLinkActive="active">USER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/hr-dashboard" routerLinkActive="active">HR</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reviewer-dashboard" routerLinkActive="active">REVIEWER</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown">EDIT</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Questions</a>
+            <a class="dropdown-item" href="#">Review</a>
+            <a class="dropdown-item" href="#">Report</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="wrapper-dashboard">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-between collapse navbar-collapse">
+                    <div>
+                        <h4>Admin Dashboard</h4>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary">Add Reviewer</button>
+                    </div>
+                  </div>
+            </div>
+          </div>
+    </div>
+    <div class="wrapper-table">
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover table-responsive-sm table-striped table-bordered">
+                    <thead class="table-primary">
+                      <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                              <div class="d-flex justify-content-start">
+                                <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Mary</td>
+                        <td>Moe</td>
+                        <td>mary@example.com</td>
+                        <td><span class="badge badge-pill badge-danger">Inactive</span></td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                              <div class="d-flex justify-content-start">
+                                <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                              <div class="d-flex justify-content-start">
+                                <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div class="d-flex justify-content-end">
+                                <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                            </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+
+    <ul class="pagination-sm pagination-md pagination-lg list-unstyled d-flex justify-content-end">
+        <li class="page-item"><a class="page-link" href="#"> < Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next > </a></li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
 
-<div class="container">
-  <div class="wrapper-dashboard">
-      <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-12">
-              <div class="d-flex justify-content-between collapse navbar-collapse">
-                  <div>
-                      <h4>Admin Dashboard</h4>
-                  </div>
-                  <div>
-                      <button class="btn btn-primary">Add Reviewer</button>
-                  </div>
-                </div>
+     <!-- Modal for View Person -->
+     <div id="myModalViewUser" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Personal Details</h4>
+              <!-- <button type="button" class="close" data-dismiss="modal"></button> -->
+            </div>
+            <div class="modal-body">
+              <p>First Name: John</p>
+              <p>Last Name: Doe</p>
+              <p>Email: john@example.com</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
           </div>
         </div>
-  </div>
-  <div class="wrapper-table">
-      <div class="row">
-          <div class="col">
-              <table class="table table-hover table-responsive-sm table-striped table-bordered">
-                  <thead class="table-primary">
-                    <tr>
-                      <th>Firstname</th>
-                      <th>Lastname</th>
-                      <th>Email</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>John</td>
-                      <td>Doe</td>
-                      <td>john@example.com</td>
-                    </tr>
-                    <tr>
-                      <td>Mary</td>
-                      <td>Moe</td>
-                      <td>mary@example.com</td>
-                    </tr>
-                    <tr>
-                      <td>July</td>
-                      <td>Dooley</td>
-                      <td>july@example.com</td>
-                    </tr>
-                  </tbody>
-              </table>
+    </div>
+
+     <!-- Modal for Edit Person -->
+    <div id="myModalEditUser" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Personal Details</h4>
+            <!-- <button type="button" class="close" data-dismiss="modal"></button> -->
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" class="form-control" id="firstname">
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" class="form-control" id="lastname">
+              </div>
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
         </div>
-  </div>
+      </div>
+    </div>
 
-  <ul class="pagination-sm pagination-md pagination-lg list-unstyled d-flex justify-content-end">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-  </ul>
 
 </div>
 
