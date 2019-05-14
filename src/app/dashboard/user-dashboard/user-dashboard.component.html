@@ -56,7 +56,44 @@
                         <h4>Admin Dashboard</h4>
                     </div>
                     <div>
-                        <button class="btn btn-primary">Add User</button>
+                      <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModalAddPerson">Add Person</button>
+
+                      <div id="myModalAddPerson" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">Personal Details</h4>
+                                <button type="button" class="close" data-dismiss="modal">x</button>
+                              </div>
+                              <div class="modal-body">
+                                <form (ngSubmit)="onStorePerson(form)" #form="ngForm">
+
+                                  <div class="form-group">
+                                    <label for="firstname">First Name:</label>
+                                    <input type="text" id="firstname" name="firstname" class="form-control" ngModel>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="lastname">Last Name:</label>
+                                    <input type="text" id="lastname" name="lastname" class="form-control" ngModel>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="email">Email</label>
+                                      <input type="email" id="email" name="email" class="form-control" ngModel>
+                                    </div>
+
+                                  <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                  </div>
+
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
                     </div>
                   </div>
             </div>
@@ -68,11 +105,11 @@
                 <table class="table table-hover table-responsive-sm table-striped table-bordered">
                     <thead class="table-primary">
                       <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                        <th>Actions</th>
+                        <th class="text-center">Firstname</th>
+                        <th class="text-center">Lastname</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -83,13 +120,13 @@
                         <td><span class="badge badge-pill badge-success">Active</span></td>
                         <td>
                           <div class="d-flex justify-content-between">
-                            <div class="d-flex justify-content-start">
+                            <div>
                               <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
                             </div>
-                            <div class="d-flex justify-content-center">
+                            <div>
                               <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
                             </div>
-                            <div class="d-flex justify-content-end">
+                            <div>
                               <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
                             </div>
                           </div>
@@ -102,13 +139,13 @@
                         <td><span class="badge badge-pill badge-danger">Inactive</span></td>
                         <td>
                             <div class="d-flex justify-content-between">
-                              <div class="d-flex justify-content-start">
+                              <div>
                                 <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
-                              <div class="d-flex justify-content-center">
+                              <div>
                                 <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
-                              <div class="d-flex justify-content-end">
+                              <div>
                                 <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
                             </div>
@@ -121,18 +158,39 @@
                         <td><span class="badge badge-pill badge-success">Active</span></td>
                         <td>
                             <div class="d-flex justify-content-between">
-                              <div class="d-flex justify-content-start">
+                              <div>
                                 <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
-                              <div class="d-flex justify-content-center">
+                              <div>
                                 <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
-                              <div class="d-flex justify-content-end">
+                              <div>
                                 <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
                             </div>
                         </td>
                       </tr>
+
+                      <tr *ngFor="let persons of arr">
+                          <td>{{ persons[0] }}</td>
+                          <td>{{ persons.value[1] }}</td>
+                          <td>{{ persons.value[2] }}</td>
+                          <td><span class="badge badge-pill badge-success">Active</span></td>
+                          <td>
+                              <div class="d-flex justify-content-between">
+                                <div>
+                                  <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                                </div>
+                                <div>
+                                  <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                                </div>
+                                <div>
+                                  <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                                </div>
+                              </div>
+                          </td>
+                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -154,16 +212,16 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title">Personal Details</h4>
-              <!-- <button type="button" class="close" data-dismiss="modal"></button> -->
+              <button type="button" class="close" data-dismiss="modal">x</button>
             </div>
             <div class="modal-body">
               <p>First Name: John</p>
               <p>Last Name: Doe</p>
               <p>Email: john@example.com</p>
             </div>
-            <div class="modal-footer">
+            <!-- <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            </div>
+            </div> -->
           </div>
         </div>
     </div>
@@ -175,7 +233,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title">Personal Details</h4>
-            <!-- <button type="button" class="close" data-dismiss="modal"></button> -->
+            <button type="button" class="close" data-dismiss="modal">x</button>
           </div>
           <div class="modal-body">
             <form>
@@ -194,9 +252,9 @@
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
-          <div class="modal-footer">
+          <!-- <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
