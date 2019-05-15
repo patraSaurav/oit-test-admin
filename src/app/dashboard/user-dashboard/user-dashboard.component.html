@@ -67,6 +67,7 @@
                                 <button type="button" class="close" data-dismiss="modal">x</button>
                               </div>
                               <div class="modal-body">
+
                                 <form (ngSubmit)="onStorePerson(form)" #form="ngForm">
 
                                   <div class="form-group">
@@ -87,8 +88,8 @@
                                   <div class="modal-footer">
                                       <button type="submit" class="btn btn-primary">Submit</button>
                                   </div>
-
                                 </form>
+
                               </div>
                             </div>
                           </div>
@@ -171,10 +172,10 @@
                         </td>
                       </tr>
 
-                      <tr *ngFor="let persons of arr">
-                          <td>{{ persons[0] }}</td>
-                          <td>{{ persons.value[1] }}</td>
-                          <td>{{ persons.value[2] }}</td>
+                      <tr *ngFor="let persons of storePerson">
+                          <td>{{ persons.firstname }}</td>
+                          <td>{{ persons.lastname }}</td>
+                          <td>{{ persons.email }}</td>
                           <td><span class="badge badge-pill badge-success">Active</span></td>
                           <td>
                               <div class="d-flex justify-content-between">

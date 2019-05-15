@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+ import { StoreData } from '../../storeData.model';
+
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
@@ -8,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class UserDashboardComponent implements OnInit {
 
- storePerson = new Array();
+ storePerson: StoreData[] = [];
 
   constructor() { }
 
@@ -17,20 +19,10 @@ export class UserDashboardComponent implements OnInit {
 
   onStorePerson(form: NgForm) {
 
-    const firstname = form.value.firstname;
-    const lastname = form.value.lastname;
-    const email = form.value.email;
-    this.storePerson = [firstname, lastname, email];
-    const arr: Array<String> = this.storePerson;
-    console.log(arr);
+    this.storePerson.push(form.value)
+    console.log(this.storePerson);
   }
 
-  // onStorePerson() {
-  //   this.storePerson = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
-  //   console.log(this.storePerson);
-  // }
-  // onAddPerson() {
-  //   console.log(this.storePerson);
-  // }
+
 
 }

@@ -10,6 +10,7 @@ import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboar
 import { HrDashboardComponent } from './dashboard/hr-dashboard/hr-dashboard.component';
 import { ReviewerDashboardComponent } from './dashboard/reviewer-dashboard/reviewer-dashboard.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,15 +18,15 @@ import { ReviewerDashboardComponent } from './dashboard/reviewer-dashboard/revie
     LoginComponent,
     UserDashboardComponent,
     HrDashboardComponent,
-    ReviewerDashboardComponent
+    ReviewerDashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
