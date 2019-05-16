@@ -9,6 +9,11 @@ import { LoginComponent } from './login/login.component';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { HrDashboardComponent } from './dashboard/hr-dashboard/hr-dashboard.component';
 import { ReviewerDashboardComponent } from './dashboard/reviewer-dashboard/reviewer-dashboard.component';
+import { HrUserComponent } from './hr-user/hr-user.component';
+import { UserUserComponent } from './user-user/user-user.component';
+import { ReviewerUserComponent } from './reviewer-user/reviewer-user.component';
+import { CommonComponent } from './common/common.component';
+
 
 
 @NgModule({
@@ -19,6 +24,10 @@ import { ReviewerDashboardComponent } from './dashboard/reviewer-dashboard/revie
     UserDashboardComponent,
     HrDashboardComponent,
     ReviewerDashboardComponent,
+    HrUserComponent,
+    UserUserComponent,
+    ReviewerUserComponent,
+    CommonComponent,
   ],
   imports: [
     BrowserModule,

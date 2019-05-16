@@ -1,33 +1,42 @@
+@media (min-width: 320px) {
+  .logo-image-login {
+    max-width: 115px;
+    /* max-height: 35px; */
+  }
+ }
+
 @media (min-width: 576px) {
-  .logo-image {
-    min-width: 100px;
-    min-height: 35px;
+  .logo-image-login  {
+    max-width: 140px;
+    /* max-height: 35px; */
   }
  }
 
  /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  .logo-image {
-    min-width: 100px;
-    min-height: 35px;
+  .logo-image-login  {
+    max-width: 145px;
   }
  }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .logo-image {
-    min-width: 120px;
-    min-height: 45px;
+  .logo-image-login  {
+    max-width: 150px;
   }
 }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-  .logo-image {
-    min-width: 140px;
-    min-height: 65px;
+  .logo-image-login  {
+    max-width: 155px;
   }
 }
+
+.wrapper-mergin-top {
+  margin-top: 115px;
+}
+
 .wrapper-login-button {
   margin-top: 10px;
   background-color: #6ab01b;

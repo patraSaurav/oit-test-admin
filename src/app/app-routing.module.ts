@@ -6,7 +6,6 @@ import { HrDashboardComponent } from './dashboard/hr-dashboard/hr-dashboard.comp
 import { ReviewerDashboardComponent } from './dashboard/reviewer-dashboard/reviewer-dashboard.component';
 
 const routes: Routes = [
-  // { path: 'admin-dashboard', component: DashboardComponent },
   { path: '',   redirectTo: '/user-dashboard', pathMatch: 'full' },
   { path: 'user-dashboard', component: UserDashboardComponent },
   { path: 'hr-dashboard', component: HrDashboardComponent },

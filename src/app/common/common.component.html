@@ -1,0 +1,57 @@
+
+<div class="d-flex justify-content-between collapse navbar-collapse">
+  <div>
+      <img src="assets/logo.png" alt="OIT logo" class="img-fluid logo-image" width="80px" height="80px">
+  </div>
+  <div>
+    <div class="d-inline-flex justify-content-end">
+      <a href="#">
+        <img src="assets/notification-bell.png" alt="user icon logo" class="img-fluid">
+        <span class="badge badge-pill badge-success">5</span>
+      </a>
+    </div>
+    <div class="d-inline-flex justify-content-end">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="assets/user-icon-logo.png" alt="user icon logo" class="img-fluid">
+        </a>
+
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Log Out</a>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <!-- <a class="navbar-brand" routerLink="/admin-dashboard">Home</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/user-dashboard" routerLinkActive="active">USER</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/hr-dashboard" routerLinkActive="active">HR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/reviewer-dashboard" routerLinkActive="active">REVIEWER</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">EDIT</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Questions</a>
+          <a class="dropdown-item" href="#">Review</a>
+          <a class="dropdown-item" href="#">Report</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>

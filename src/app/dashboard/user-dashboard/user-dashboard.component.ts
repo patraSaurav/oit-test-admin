@@ -19,7 +19,7 @@ export class UserDashboardComponent implements OnInit {
 
   onStorePerson(form: NgForm) {
 
-    this.storePerson.push(form.value)
+    this.storePerson.push(form.value);
     console.log(this.storePerson);
   }
 

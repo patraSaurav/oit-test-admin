@@ -1,28 +1,35 @@
-<div class="container align-middle">
-  <div class="row justify-content-center align-items-center">
-    <div class="col-md-8 col-sm-8 col-12">
-      <div class="row justify-content-center align-items-center">
-        <img src="assets/logo.png" alt="OIT logo" class="img-fluid logo-image">
+<div class="container wrapper-mergin-top">
+  <div class="d-flex justify-content-center">
+    <div class="col-sm-12 col-md-10 col-lg-8">
+      <div class="d-flex justify-content-center">
+        <div class="logo-image-login">
+          <img src="assets/logo.png" alt="OIT logo" class="img-fluid">
+        </div>
       </div>
-      <div class="form-group">
+      <form >
+        <div class="form-group">
           <label for="username"></label>
-            <input type="text" class="form-control" id="usr" placeholder="Username">
-
-            <label for="password"></label>
-            <input type="password" class="form-control" id="pwd" placeholder="Password">
-      </div>
-      <div class="form-check-inline">
-        <input type="checkbox" class="form-check-input">Remember me
-      </div>
-      <div>
-          <button class="btn wrapper-login-button btn-block">LOGIN</button>
-          <div class="d-flex justify-content-center mt-2">
-            <ul class="d-inline-flex list-unstyled">
-                <li><img src="assets/forget-password-logo.png" alt="forgot password logo"></li>
-                <li><a href="#">Forgot password?</a></li>
-            </ul>
-          </div>
-      </div>
+          <input type="text" id="username" name="username" class="form-control" placeholder="User Name" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="password"></label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Password" ngModel>
+        </div>
+        <div class="form-check-inline">
+          <input type="checkbox" class="form-check-input">Remember me
+        </div>
+        <div>
+            <button class="btn wrapper-login-button btn-block">LOGIN</button>
+            <div class="d-flex justify-content-center mt-2">
+              <div class="mr-1">
+                <img src="assets/forget-password-logo.png" alt="forgot password logo" class="img-fluid">
+              </div>
+              <div>
+                <a href="#">Forgot password?</a>
+              </div>
+            </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
