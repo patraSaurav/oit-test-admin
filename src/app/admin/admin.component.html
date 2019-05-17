@@ -37,23 +37,33 @@
                                     <input type="email" id="email" name="email" class="form-control" ngModel>
                                 </div>
 
-                                <div class="form-group d-inline-flex">
-                                  <label for="personType">Person Type</label>
+                                <div class="form-group">
+                                  <div class="d-flex justify-content-start">
+                                      <label for="personType">Person Type:</label>
+                                  </div>
 
+                                  <div class="d-flex justify-content-between">
+                                    <div>
+                                      <label for="personType">User</label>
+                                      <input type="radio" id="personType" name="personType" value="user" class="form-control" ngModel>
+                                    </div>
 
-                                  User <input type="radio" id="personType" name="personType" class="form-control" ngModel>
+                                    <div>
+                                      <label for="personType">HR</label>
+                                      <input type="radio" id="personType" name="personType" value="hr" class="form-control" ngModel>
+                                    </div>
 
-                                  <label for="hr">HR</label>
-                                  <input type="radio" id="personType" name="personType" class="form-control" ngModel>
-
-                                  <label for="reviewer">Reviewer</label>
-                                  <input type="radio" id="personType" name="personType" class="form-control" ngModel> Reviewer
-
+                                    <div>
+                                      <label for="personType">Reviewer</label>
+                                      <input type="radio" id="personType" name="personType" value="reviewer" class="form-control" ngModel>
+                                    </div>
+                                  </div>
                                 </div>
 
                                 <div class="modal-footer">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
+
                               </form>
 
                             </div>
@@ -181,10 +191,10 @@
             <h4 class="modal-title">Personal Details</h4>
             <button type="button" class="close" data-dismiss="modal">x</button>
           </div>
-          <div class="modal-body">
-            <p>First Name: John</p>
-            <p>Last Name: Doe</p>
-            <p>Email: john@example.com</p>
+          <div class="modal-body" *ngFor="let viewPerson of storePerson">
+            <p>First Name: {{ viewPerson.firstname }} </p>
+            <p>Last Name: {{ viewPerson.lastname }} </p>
+            <p>Email: {{ viewPerson.email }} </p>
           </div>
           <!-- <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

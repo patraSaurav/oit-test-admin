@@ -1,0 +1,240 @@
+<div class="container">
+    <div class="wrapper-dashboard">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-between collapse navbar-collapse">
+                    <div>
+                        <h4>HR Dashboard</h4>
+                    </div>
+                    <div>
+                      <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModalAddPerson">Add Person</button>
+
+                      <div id="myModalAddPerson" class="modal fade" role="dialog">
+                          <div class="modal-dialog">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">Personal Details</h4>
+                                <button type="button" class="close" data-dismiss="modal">x</button>
+                              </div>
+                              <div class="modal-body">
+
+                                <form (ngSubmit)="onStorePerson(form)" #form="ngForm">
+
+                                  <div class="form-group">
+                                    <label for="firstname">First Name:</label>
+                                    <input type="text" id="firstname" name="firstname" class="form-control" ngModel>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="lastname">Last Name:</label>
+                                    <input type="text" id="lastname" name="lastname" class="form-control" ngModel>
+                                  </div>
+
+                                  <div class="form-group">
+                                      <label for="email">Email</label>
+                                      <input type="email" id="email" name="email" class="form-control" ngModel>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <div class="d-flex justify-content-start">
+                                        <label for="personType">Person Type:</label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between">
+                                      <div>
+                                        <label for="personType">User</label>
+                                        <input type="radio" id="personType" name="personType" value="user" class="form-control" ngModel>
+                                      </div>
+
+                                      <div>
+                                        <label for="personType">Reviewer</label>
+                                        <input type="radio" id="personType" name="personType" value="reviewer" class="form-control" ngModel>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                  </div>
+
+                                </form>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+                  </div>
+            </div>
+          </div>
+    </div>
+    <div class="wrapper-table">
+        <div class="row">
+            <div class="col">
+                <table class="table table-hover table-responsive-sm table-striped table-bordered">
+                    <thead class="table-primary">
+                      <tr>
+                        <th class="text-center">Firstname</th>
+                        <th class="text-center">Lastname</th>
+                        <th class="text-center">Email</th>
+                        <th class="text-center">Status</th>
+                        <th class="text-center">Actions</th>
+                        <th class="text-center">Interview Schdule</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john@example.com</td>
+                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                        <td>
+                          <div class="d-flex justify-content-between">
+                            <div>
+                              <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                            <div>
+                              <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="d-inline-flex">
+                            <span class="input-group">
+                              <input type="date" id="interview-date">
+                              <button type="submit" class="btn btn-sm btn-primary">Pick Date</button>
+                            </span>
+
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>July</td>
+                        <td>Dooley</td>
+                        <td>july@example.com</td>
+                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                        <td>
+                            <div class="d-flex justify-content-between">
+                              <div>
+                                <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div>
+                                <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                              <div>
+                                <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                              </div>
+                            </div>
+                        </td>
+                        <td>
+                          <div class="d-inline-flex">
+                              <span class="input-group">
+                                <input type="date" id="interview-date">
+                                <button type="submit" class="btn btn-sm btn-primary">Pick Date</button>
+                              </span>
+                          </div>
+                          </td>
+                      </tr>
+
+                      <tr *ngFor="let persons of storePerson">
+                          <td>{{ persons.firstname }}</td>
+                          <td>{{ persons.lastname }}</td>
+                          <td>{{ persons.email }}</td>
+                          <td><span class="badge badge-pill badge-success">Active</span></td>
+                          <td>
+                              <div class="d-flex justify-content-between">
+                                <div>
+                                  <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                                </div>
+                                <div>
+                                  <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                                </div>
+                                <div>
+                                  <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                                </div>
+                              </div>
+                          </td>
+                          <td>
+                            <div class="d-inline-flex">
+                                <span class="input-group">
+                                  <input type="date" id="interview-date">
+                                  <button type="submit" class="btn btn-sm btn-primary">Pick Date</button>
+                                </span>
+                            </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+          </div>
+    </div>
+
+    <ul class="pagination-sm pagination-md pagination-lg list-unstyled d-flex justify-content-end">
+        <li class="page-item"><a class="page-link" href="#"> < Previous</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next > </a></li>
+    </ul>
+
+    <!-- Modal for View Person -->
+    <div id="myModalViewUser" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Personal Details</h4>
+              <button type="button" class="close" data-dismiss="modal">x</button>
+            </div>
+            <div class="modal-body" *ngFor="let viewPerson of storePerson">
+              <p>First Name: {{ viewPerson.firstname }} </p>
+              <p>Last Name: {{ viewPerson.lastname }} </p>
+              <p>Email: {{ viewPerson.email }} </p>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div> -->
+          </div>
+        </div>
+    </div>
+
+      <!-- Modal for Edit Person -->
+    <div id="myModalEditUser" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Personal Details</h4>
+            <button type="button" class="close" data-dismiss="modal">x</button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" class="form-control" id="firstname">
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" class="form-control" id="lastname">
+              </div>
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" class="form-control" id="email">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+</div>
