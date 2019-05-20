@@ -1,3 +1,5 @@
+<app-common></app-common>
+
 <div class="container">
     <div class="wrapper-dashboard">
         <div class="row">
@@ -73,16 +75,16 @@
     <div class="wrapper-table">
         <div class="row">
             <div class="col">
-                <table class="table table-hover table-responsive-sm table-striped table-bordered">
+                <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-striped table-bordered">
                     <thead class="table-primary">
                       <tr>
                         <th class="text-center">Firstname</th>
                         <th class="text-center">Lastname</th>
                         <th class="text-center">Email</th>
-                        <th class="text-center">Status</th>
+                        <!-- <th class="text-center">Status</th> -->
                         <th class="text-center">Actions</th>
                         <th class="text-center">Interview Date</th>
-                        <th class="text-center">Interview Process</th>
+                        <th class="text-center">Candidate Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -90,73 +92,81 @@
                         <td>John</td>
                         <td>Doe</td>
                         <td>john@example.com</td>
-                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                        <!-- <td><span class="badge badge-pill badge-success">Active</span></td> -->
                         <td>
                           <div class="d-flex justify-content-between">
                             <div>
                               <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
-                            </div>
+                            </div> -->
                             <div>
                               <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <div class="d-inline-flex">
-                            <span class="input-group">
-                              <input type="date" id="interview-date">
-                              <button type="submit" class="btn btn-sm btn-primary">Pick Date</button>
-                            </span>
+                          20-05-2019
+                        </td>
+                        <td>
+                          <div class="form-group">
+                            <select class="form-control form-control-sm">
+                                <option>Choose Option</option>
+                              <option>Selected</option>
+                              <option>Rejected</option>
+                              <option>Hold</option>
+                            </select>
                           </div>
                         </td>
-                        <td>Completed</td>
                       </tr>
                       <tr>
                         <td>July</td>
                         <td>Dooley</td>
                         <td>july@example.com</td>
-                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                        <!-- <td><span class="badge badge-pill badge-success">Active</span></td> -->
                         <td>
                             <div class="d-flex justify-content-between">
                               <div>
                                 <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
-                              <div>
+                              <!-- <div>
                                 <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
-                              </div>
+                              </div> -->
                               <div>
                                 <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
                             </div>
                         </td>
                         <td>
-                          <div class="d-inline-flex">
-                              <span class="input-group">
-                                <input type="date" id="interview-date">
-                                <button type="submit" class="btn btn-sm btn-primary">Pick Date</button>
-                              </span>
+                          27-05-2019
+                        </td>
+                        <td>
+                          <div class="form-group">
+                              <select class="form-control form-control-sm">
+                                  <option>Choose Option</option>
+                                <option>Selected</option>
+                                <option>Rejected</option>
+                                <option>Hold</option>
+                              </select>
                           </div>
-                          </td>
-                        <td>Processing</td>
+                      </td>
                       </tr>
 
-                      <tr *ngFor="let persons of storePerson">
+                      <!-- <tr *ngFor="let persons of storePerson">
                           <td>{{ persons.firstname }}</td>
                           <td>{{ persons.lastname }}</td>
-                          <td>{{ persons.email }}</td>
-                          <td><span class="badge badge-pill badge-success">Active</span></td>
-                          <td>
+                          <td>{{ persons.email }}</td> -->
+                          <!-- <td><span class="badge badge-pill badge-success">Active</span></td> -->
+                          <!-- <td>
                               <div class="d-flex justify-content-between">
                                 <div>
                                   <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
-                                </div>
-                                <div>
+                                </div> -->
+                                <!-- <div>
                                   <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
-                                </div>
-                                <div>
+                                </div> -->
+                                <!-- <div>
                                   <button type="button" class="btn btn-xs btn-outline-danger rounded-circle" data-toggle="modal" data-target="#"><img src="assets/userDelete.png" alt="View Eye Logo" class="img-responsive-action"></button>
                                 </div>
                               </div>
@@ -169,8 +179,17 @@
                                 </span>
                             </div>
                           </td>
-                        <td>Completed</td>
-                        </tr>
+                        <td>
+                          <div class="form-group">
+                              <select class="form-control form-control-sm">
+                                  <option>Choose Option</option>
+                                <option>Selected</option>
+                                <option>Rejected</option>
+                                <option>Hold</option>
+                              </select>
+                          </div>
+                        </td>
+                        </tr> -->
 
                     </tbody>
                 </table>
@@ -239,5 +258,4 @@
         </div>
       </div>
     </div>
-
 </div>

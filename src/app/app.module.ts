@@ -10,6 +10,9 @@ import { AdminComponent } from './admin/admin.component';
 import { HrComponent } from './hr/hr.component';
 import { UserComponent } from './user/user.component';
 import { ReviewerComponent } from './reviewer/reviewer.component';
+import { AdminHrComponent } from './admin/admin-hr/admin-hr.component';
+import { AdminReviewerComponent } from './admin/admin-reviewer/admin-reviewer.component';
+import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 
 
 
@@ -21,7 +24,10 @@ import { ReviewerComponent } from './reviewer/reviewer.component';
     AdminComponent,
     HrComponent,
     UserComponent,
-    ReviewerComponent
+    ReviewerComponent,
+    AdminHrComponent,
+    AdminReviewerComponent,
+    UserRegistrationComponent
   ],
   imports: [
     BrowserModule,

@@ -24,15 +24,21 @@
 </div>
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="/admin">Home</a>
+  <a class="navbar-brand" routerLink="/admin">Home |</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/admin-hr">HR</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/admin-reviewer">Reviewer</a>
+      </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown">EDIT</a>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown">Edit</a>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="#">Questions</a>
           <a class="dropdown-item" href="#">Review</a>
@@ -46,3 +52,5 @@
     </form>
   </div>
 </nav>
+
+
