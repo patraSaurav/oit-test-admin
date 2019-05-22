@@ -6,7 +6,7 @@
           <div class="col">
               <div class="d-flex justify-content-between collapse navbar-collapse">
                   <div>
-                      <h4>Admin Dashboard</h4>
+                      <h4>Admin Dashboard/Candidate's List</h4>
                   </div>
                   <div>
                     <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModalAddPerson">Add Person</button>
@@ -37,29 +37,6 @@
                                     <label for="email">Email</label>
                                     <input type="email" id="email" name="email" class="form-control" ngModel>
                                 </div>
-
-                                <!-- <div class="form-group">
-                                  <div class="d-flex justify-content-start">
-                                      <label for="personType">Person Type:</label>
-                                  </div>
-
-                                  <div class="d-flex justify-content-between">
-                                    <div>
-                                      <label for="personType">User</label>
-                                      <input type="radio" id="personType" name="personType" value="user" class="form-control" ngModel>
-                                    </div>
-
-                                    <div>
-                                      <label for="personType">HR</label>
-                                      <input type="radio" id="personType" name="personType" value="hr" class="form-control" ngModel>
-                                    </div>
-
-                                    <div>
-                                      <label for="personType">Reviewer</label>
-                                      <input type="radio" id="personType" name="personType" value="reviewer" class="form-control" ngModel>
-                                    </div>
-                                  </div>
-                                </div> -->
 
                                 <div class="modal-footer">
                                   <button type="submit" class="btn btn-primary">Submit</button>
@@ -153,6 +130,7 @@
                         <td>{{ persons.firstname }}</td>
                         <td>{{ persons.lastname }}</td>
                         <td>{{ persons.email }}</td>
+                        <td>{{item.name}}</td>
                         <td><span class="badge badge-pill badge-success">Active</span></td>
                         <td>
                             <div class="d-flex justify-content-between">
@@ -174,14 +152,38 @@
           </div>
         </div>
   </div>
+  
+  <!-- items being paged -->
+  <!-- <div *ngFor="let item of pagedItems">{{item.name}}</div> -->
 
-  <ul class="pagination-sm pagination-md pagination-lg list-unstyled d-flex justify-content-end">
+  <!-- pager -->
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination-sm pagination-md pagination-lg list-unstyled d-flex justify-content-end">
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+          <a class="page-link" (click)="setPage(1)">First</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+          <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+      </li>
+      <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+          <a class="page-link" (click)="setPage(page)">{{page}}</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+      </li>
+      <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a class="page-link" (click)="setPage(pager.totalPages)">Last</a>
+      </li>
+  </ul>
+
+
+
+  <!-- <ul class="pagination-sm pagination-md pagination-lg list-unstyled d-flex justify-content-end">
       <li class="page-item"><a class="page-link" href="#"> < Previous</a></li>
       <li class="page-item active"><a class="page-link" href="#">1</a></li>
       <li class="page-item"><a class="page-link" href="#">2</a></li>
       <li class="page-item"><a class="page-link" href="#">3</a></li>
       <li class="page-item"><a class="page-link" href="#">Next > </a></li>
-  </ul>
+  </ul> -->
 
   <!-- Modal for View Person -->
   <div id="myModalViewUser" class="modal fade" role="dialog">

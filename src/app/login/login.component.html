@@ -1,40 +1,52 @@
 <div class="container wrapper-mergin-top">
-  <div class="d-flex justify-content-center">
-    <div class="col-sm-12 col-md-10 col-lg-8">
-      <div class="d-flex justify-content-center">
-        <div class="logo-image-login">
-          <img src="assets/logo.png" alt="OIT logo" class="img-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-center table-responsive">
+
+        <div class="d-flex justify-content-center mr-3">
+          <img src="assets/test-img2.png" alt="OIT logo" class="img-fluid wrapper-test-exam-logo">
         </div>
+
+        <div class="d-flex justify-content-center mt-3">
+          
+          <form >
+                <div class="d-flex justify-content-center">
+                    <div class="logo-image-login">
+                      <img src="assets/logo.png" alt="OIT logo" class="img-fluid">
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="username"></label>
+                  <input type="text" id="username" name="username" class="form-control" placeholder="User Name" ngModel>
+                </div>
+                <div class="form-group">
+                  <label for="password"></label>
+                  <input type="password" id="password" name="password" class="form-control" placeholder="Password" ngModel>
+                </div>
+                <div class="form-check-inline">
+                  <input type="checkbox" class="form-check-input">Remember me
+                </div>
+                <div>
+                    <button class="btn wrapper-login-button btn-block">LOGIN</button>
+                    <div class="d-flex justify-content-center mt-2">
+                      <div class="mr-1">
+                        <img src="assets/forget-password-logo.png" alt="forgot password logo" class="img-fluid">
+                      </div>
+                      <div>
+                        <a href="#">Forgot password?</a>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="d-flex justify-content-center">
+                        <a routerLink="/user-registration">New User? Register here.</a>
+                      </span>
+                    </div>
+                </div>
+          </form>
+          
+        </div>
+
       </div>
-      <form >
-        <div class="form-group">
-          <label for="username"></label>
-          <input type="text" id="username" name="username" class="form-control" placeholder="User Name" ngModel>
-        </div>
-        <div class="form-group">
-          <label for="password"></label>
-          <input type="password" id="password" name="password" class="form-control" placeholder="Password" ngModel>
-        </div>
-        <div class="form-check-inline">
-          <input type="checkbox" class="form-check-input">Remember me
-        </div>
-        <div>
-            <button class="btn wrapper-login-button btn-block">LOGIN</button>
-            <div class="d-flex justify-content-center mt-2">
-              <div class="mr-1">
-                <img src="assets/forget-password-logo.png" alt="forgot password logo" class="img-fluid">
-              </div>
-              <div>
-                <a href="#">Forgot password?</a>
-              </div>
-            </div>
-            <div>
-              <span class="d-flex justify-content-center">
-                <a href="#">New User? Register here.</a>
-              </span>
-            </div>
-        </div>
-      </form>
     </div>
   </div>
 </div>

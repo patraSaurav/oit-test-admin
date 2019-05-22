@@ -6,10 +6,12 @@ import { ReviewerComponent } from './reviewer/reviewer.component';
 import { AdminHrComponent } from './admin/admin-hr/admin-hr.component';
 import { AdminReviewerComponent } from './admin/admin-reviewer/admin-reviewer.component';
 import { LoginComponent } from './login/login.component';
+import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/admin', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'user-registration', component: UserRegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'admin-hr', component: AdminHrComponent },

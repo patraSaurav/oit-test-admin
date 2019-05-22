@@ -1,4 +1,5 @@
 @media (min-width: 320px) {
+
   .logo-image-login {
     max-width: 115px;
     /* max-height: 35px; */
@@ -6,6 +7,7 @@
  }
 
 @media (min-width: 576px) {
+
   .logo-image-login  {
     max-width: 140px;
     /* max-height: 35px; */
@@ -14,6 +16,7 @@
 
  /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+
   .logo-image-login  {
     max-width: 145px;
   }
@@ -21,6 +24,7 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
   .logo-image-login  {
     max-width: 150px;
   }
@@ -28,6 +32,7 @@
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+
   .logo-image-login  {
     max-width: 155px;
   }
@@ -45,4 +50,9 @@
 
 .wrapper-login {
   margin-top: 20px;
+}
+
+.wrapper-test-exam-logo {
+  max-width: 400px;
+  max-height: 400px;
 }
