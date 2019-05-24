@@ -29,7 +29,7 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     // get dummy data
-    this.http.get('http://www.mocky.io/v2/5ce5408f2e00001272f83c2a')
+    this.http.get(' http://www.mocky.io/v2/5ce78f1e330000b2ec731af1')
     .pipe(
       map((response: Response) => response.json())
     )

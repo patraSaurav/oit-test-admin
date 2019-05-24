@@ -9,7 +9,7 @@
                       <h4>Admin Dashboard/Candidate's List</h4>
                   </div>
                   <div>
-                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModalAddPerson">Add Person</button>
+                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModalAddPerson">Add Candidate</button>
 
                     <div id="myModalAddPerson" class="modal fade" role="dialog">
                         <div class="modal-dialog">
@@ -126,12 +126,16 @@
                       </td>
                     </tr>
 
-                    <tr *ngFor="let persons of storePerson">
-                        <td>{{ persons.firstname }}</td>
-                        <td>{{ persons.lastname }}</td>
-                        <td>{{ persons.email }}</td>
-                        <td>{{item.name}}</td>
-                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                    <tr *ngFor="let item of pagedItems">
+                        <td>{{ item.firstname }}</td>
+                        <td>{{ item.lastname }}</td>
+                        <td>{{ item.email }}</td>
+                        <td>
+                          <span Class="badge badge-pill"
+                           [ngClass]="{'badge-success': item.status === 'Active',
+                          'badge-danger': item.status === 'Inactive'
+                          }">{{ item.status }}</span>
+                      </td>
                         <td>
                             <div class="d-flex justify-content-between">
                               <div>
@@ -152,7 +156,7 @@
           </div>
         </div>
   </div>
-  
+
   <!-- items being paged -->
   <!-- <div *ngFor="let item of pagedItems">{{item.name}}</div> -->
 
@@ -162,20 +166,18 @@
           <a class="page-link" (click)="setPage(1)">First</a>
       </li>
       <li class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
-          <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+          <a class="page-link" (click)="setPage(pager.currentPage - 1)"> < Previous</a>
       </li>
       <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
           <a class="page-link" (click)="setPage(page)">{{page}}</a>
       </li>
       <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-          <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+          <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next > </a>
       </li>
       <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
           <a class="page-link" (click)="setPage(pager.totalPages)">Last</a>
       </li>
   </ul>
-
-
 
   <!-- <ul class="pagination-sm pagination-md pagination-lg list-unstyled d-flex justify-content-end">
       <li class="page-item"><a class="page-link" href="#"> < Previous</a></li>
