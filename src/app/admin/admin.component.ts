@@ -70,15 +70,15 @@ export class AdminComponent implements OnInit{
 
   onViewDetails(i) {
 
-    var view = this.pagedItems;
+    let view = this.pagedItems;
 
     this.ViewFirstName = view[i].firstname;
     this.ViewLastName = view[i].lastname;
     this.ViewEmail = view[i].email;
 
-      console.log(this.ViewFirstName);
-      console.log(this.ViewLastName);
-      console.log(this.ViewEmail);
+      // console.log(this.ViewFirstName);
+      // console.log(this.ViewLastName);
+      // console.log(this.ViewEmail);
 
   }
 

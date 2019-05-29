@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
@@ -9,11 +10,12 @@ import { LoginComponent } from './login/login.component';
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'user-registration', component: UserRegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent},
   { path: 'admin-hr', component: AdminHrComponent },
   { path: 'admin-reviewer', component: AdminReviewerComponent },
   { path: 'hr', component: HrComponent },

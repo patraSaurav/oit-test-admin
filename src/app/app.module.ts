@@ -1,3 +1,5 @@
+import { AuthGuard } from './auth/auth-guard.service';
+import { AuthService } from './auth/auth.service';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,6 +23,7 @@ import { PagerService } from './common/pager-service.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +36,7 @@ import { PagerService } from './common/pager-service.service';
     AdminHrComponent,
     AdminReviewerComponent,
     UserRegistrationComponent,
-    HrReviewerComponent
+    HrReviewerComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { PagerService } from './common/pager-service.service';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ PagerService ],
+  providers: [ PagerService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
