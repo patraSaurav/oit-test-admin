@@ -15,8 +15,16 @@
                         <div class="modal-dialog">
                           <!-- Modal content-->
                           <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header text-center">
+
                               <h4 class="modal-title">Personal Details</h4>
+
+                                <div class="toast text-center bg-success w-50 mb-0 ml-4" data-autohide="false">
+                                    <button type="button" class="mb-2 mr-1 close" data-dismiss="toast">x</button>
+
+                                    <p class="mb-0 pt-2"> Table has been updated! </p>
+                                </div>
+
                               <button type="button" class="close" data-dismiss="modal">x</button>
                             </div>
                             <div class="modal-body">
@@ -38,8 +46,13 @@
                                     <input type="email" id="email" name="email" class="form-control" ngModel>
                                 </div>
 
+                                <div class="form-group">
+                                  <label for="status"></label>
+                                  <input type="hidden" id="status" name="status" class="form-control" ngModel>
+                                </div>
+
                                 <div class="modal-footer">
-                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                  <button type="submit" class="btn btn-primary" id="myBtn">Submit</button>
                                 </div>
 
                               </form>
@@ -48,7 +61,6 @@
                           </div>
                         </div>
                       </div>
-
                   </div>
                 </div>
           </div>
@@ -126,7 +138,7 @@
                       </td>
                     </tr>
 
-                    <tr *ngFor="let item of pagedItems">
+                    <tr *ngFor="let item of pagedItems; let i = index">
                         <td>{{ item.firstname }}</td>
                         <td>{{ item.lastname }}</td>
                         <td>{{ item.email }}</td>
@@ -139,7 +151,7 @@
                         <td>
                             <div class="d-flex justify-content-between">
                               <div>
-                                <button type="button" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
+                                <button type="button"  (click)="onViewDetails(i)" class="btn btn-xs btn-outline-info rounded-circle" data-toggle="modal" data-target="#myModalViewUser"><img src="assets/ViewEye.png" alt="View Eye Logo" class="img-responsive-action"></button>
                               </div>
                               <div>
                                 <button type="button" class="btn btn-xs btn-outline-warning rounded-circle" data-toggle="modal" data-target="#myModalEditUser"><img src="assets/userEdit.png" alt="View Eye Logo" class="img-responsive-action"></button>
@@ -196,10 +208,10 @@
             <h4 class="modal-title">Personal Details</h4>
             <button type="button" class="close" data-dismiss="modal">x</button>
           </div>
-          <div class="modal-body" *ngFor="let viewPerson of storePerson">
-            <p>First Name: {{ viewPerson.firstname }} </p>
-            <p>Last Name: {{ viewPerson.lastname }} </p>
-            <p>Email: {{ viewPerson.email }} </p>
+          <div class="modal-body">
+            <p>First Name: {{ ViewFirstName }} </p>
+            <p>Last Name: {{ ViewLastName}} </p>
+            <p>Email: {{ ViewEmail }} </p>
           </div>
           <!-- <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -242,6 +254,8 @@
   </div>
 
 </div>
+
+
 
 
 
