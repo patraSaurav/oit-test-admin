@@ -19,6 +19,8 @@ import { AdminReviewerComponent } from './admin/admin-reviewer/admin-reviewer.co
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
 import { HrReviewerComponent } from './hr/hr-reviewer/hr-reviewer.component';
 import { PagerService } from './common/pager-service.service';
+import { UserNavComponent } from './user/user-nav/user-nav.component';
+import { UserExamComponent } from './user/user-exam/user-exam.component';
 
 
 
@@ -37,6 +39,8 @@ import { PagerService } from './common/pager-service.service';
     AdminReviewerComponent,
     UserRegistrationComponent,
     HrReviewerComponent,
+    UserNavComponent,
+    UserExamComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,8 @@ import { AdminHrComponent } from './admin/admin-hr/admin-hr.component';
 import { AdminReviewerComponent } from './admin/admin-reviewer/admin-reviewer.component';
 import { LoginComponent } from './login/login.component';
 import { UserRegistrationComponent } from './user/user-registration/user-registration.component';
+import { UserComponent } from './user/user.component';
+import { UserExamComponent } from './user/user-exam/user-exam.component';
 
 
 
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'admin-hr', component: AdminHrComponent },
   { path: 'admin-reviewer', component: AdminReviewerComponent },
   { path: 'hr', component: HrComponent },
-  { path: 'reviewer', component: ReviewerComponent }
+  { path: 'reviewer', component: ReviewerComponent },
+  { path: 'user', component: UserComponent },
+  { path: 'user-exam', component: UserExamComponent }
 ];
 
 @NgModule({
