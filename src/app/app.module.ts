@@ -21,6 +21,7 @@ import { HrReviewerComponent } from './hr/hr-reviewer/hr-reviewer.component';
 import { PagerService } from './common/pager-service.service';
 import { UserNavComponent } from './user/user-nav/user-nav.component';
 import { UserExamComponent } from './user/user-exam/user-exam.component';
+import { PagerQuestionService } from './common/pager-question.service';
 
 
 
@@ -49,7 +50,7 @@ import { UserExamComponent } from './user/user-exam/user-exam.component';
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [ PagerService, AuthService, AuthGuard],
+  providers: [ PagerService, PagerQuestionService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
